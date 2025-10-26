@@ -35,11 +35,11 @@ except FileNotFoundError:
 # --- Start Building the App ---
 
 # 1. Title
-st.title("Exploratory Data Analysis: UK House Prices 🏠")
-st.write("This interactive app analyzes average house prices from 1968 to 2025.")
+st.title("Exploring Data Analysis: UK House Prices 🏠")
+st.write("This interactive dashboard analyzes average house prices from 1968 to 2025.")
 
 # --- Section 1: Data Overview ---
-st.header("1. Data Overview")
+st.header("Data Overview")
 
 # Add a checkbox to toggle the view of the raw data
 if st.checkbox("Show raw data"):
@@ -53,7 +53,7 @@ st.write(df_cleaned.describe())
 
 
 # --- Section 2: Time Series Analysis ---
-st.header("2. Price Trends Over Time")
+st.header("1. Price Trends Over Time")
 
 # Get a list of all unique regions for the dropdown menu
 all_regions = df_cleaned['Region_Name'].unique()
@@ -87,7 +87,7 @@ st.altair_chart(time_series_chart, use_container_width=True)
 
 
 # --- Section 3: Regional Comparison (Latest Data) ---
-st.header("3. Regional Price Comparison")
+st.header("2. Regional Price Comparison")
 
 # Find the most recent date in the dataset
 latest_date = df_cleaned['Date'].max()
